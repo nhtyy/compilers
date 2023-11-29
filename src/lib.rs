@@ -270,7 +270,7 @@ impl<T: ArtifactOutput> Project<T> {
 
         #[cfg(all(feature = "svm-solc", not(target_arch = "wasm32")))]
         if self.auto_detect {
-            tracing::trace!("using solc auto detection to compile sources");
+            tracing::trace!("using HELLOs auto detection to compile sources");
             return self.svm_compile(sources)
         }
 

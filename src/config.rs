@@ -344,6 +344,8 @@ impl ProjectPathsConfig {
                 import.strip_prefix(&r.name).ok().map(|stripped_import| {
                     let lib_path = Path::new(&r.path).join(stripped_import);
 
+                    tracing::debug!("lib_path: {:?}", lib_path);
+
                     // we handle the edge case where the path of a remapping ends with "contracts"
                     // (`<name>/=.../contracts`) and the stripped import also starts with
                     // `contracts`
